@@ -1,0 +1,70 @@
+<div class="page-container">
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Blog & Articles</h2>
+            <p class="section-subtitle">Thoughts on cybersecurity, technology, and entrepreneurship</p>
+        </div>
+
+        <div id="blog-grid" class="card-grid">
+            <!-- Blog posts will be loaded dynamically -->
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-darker);">
+        <div class="section-header">
+            <h2 class="section-title">Popular Topics</h2>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="card-title">Cybersecurity</h3>
+                    <p class="card-description">
+                        In-depth articles on penetration testing, vulnerability research, 
+                        security tools, and defensive strategies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="card-title">Development</h3>
+                    <p class="card-description">
+                        Tutorials on secure coding practices, web development, 
+                        and building scalable applications.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3 class="card-title">Startups & Business</h3>
+                    <p class="card-description">
+                        Insights from my entrepreneurial journey, startup strategies, 
+                        and lessons learned in tech business.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="card-title">Learning & Growth</h3>
+                    <p class="card-description">
+                        Resources for continuous learning, career development, 
+                        and staying current in tech.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    if (window.router) {
+        window.router.initBlogPage();
+    }
+</script>

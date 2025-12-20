@@ -1,0 +1,79 @@
+<div class="page-container">
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">CTF wins, coding projects, business ventures, and startup initiatives</p>
+        </div>
+
+        <div id="projects-grid" class="card-grid">
+            <!-- Projects will be loaded dynamically by router -->
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-darker);">
+        <div class="section-header">
+            <h2 class="section-title">CTF & Competitions</h2>
+            <p class="section-subtitle">Capture The Flag achievements and security competitions</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-flag-checkered"></i></div>
+                    <h3 class="card-title">National CTF Championship 2022</h3>
+                    <p class="card-description">
+                        <strong style="color: var(--primary-color);">1st Place</strong> - Solved 45+ challenges 
+                        across web exploitation, cryptography, forensics, binary exploitation, and reverse engineering.
+                        Competed against 500+ teams nationwide.
+                    </p>
+                    <div style="margin-top: 15px;">
+                        <span class="skill-tag" style="font-size: 0.85rem;">Web Security</span>
+                        <span class="skill-tag" style="font-size: 0.85rem;">Cryptography</span>
+                        <span class="skill-tag" style="font-size: 0.85rem;">Forensics</span>
+                        <span class="skill-tag" style="font-size: 0.85rem;">Reverse Engineering</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 class="card-title">HackTheBox Pro Hacker</h3>
+                    <p class="card-description">
+                        Achieved Pro Hacker rank on HackTheBox with 150+ machines rooted. 
+                        Specialized in Active Directory attacks, privilege escalation, and lateral movement.
+                        Top 1% in global rankings.
+                    </p>
+                    <div style="margin-top: 15px;">
+                        <span class="skill-tag" style="font-size: 0.85rem;">Pentesting</span>
+                        <span class="skill-tag" style="font-size: 0.85rem;">Active Directory</span>
+                        <span class="skill-tag" style="font-size: 0.85rem;">Privilege Escalation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="card-title">DEF CON CTF Qualifier</h3>
+                    <p class="card-description">
+                        Qualified for DEF CON CTF finals as part of university team. 
+                        Focused on advanced exploitation techniques and hardware hacking challenges.
+                        Ranked in top 20 teams globally.
+                    </p>
+                    <div style="margin-top: 15px;">
+                        <span class="skill-tag" style="font-size: 0.85rem;">Advanced Exploitation</span>
+                        <span class="skill-tag" style="font-size: 0.85rem;">Hardware</span>
+                        <span class="skill-tag" style="font-size: 0.85rem;">IoT Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    if (window.router) {
+        window.router.initProjectsPage();
+    }
+</script>
