@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Personal Digital Universe Website
 
 A modern, professional personal website built with pure HTML, CSS, and JavaScript. Features a single-page application architecture with dynamic content loading, smooth animations, and full responsiveness.
@@ -309,3 +310,6 @@ If you encounter issues:
 5. **Share your new website** with the world!
 
 Good luck with your new website! 🎊
+=======
+# Personal_website
+>>>>>>> ff987ab032e8392b1887e4d44c9c7582d83da52e
