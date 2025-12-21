@@ -1,11 +1,11 @@
 // Data Structure for Dynamic Content
 const websiteData = {
     personal: {
-        name: "Your Name",
-        tagline: "Cybersecurity Expert | Full Stack Developer | Entrepreneur",
-        email: "your.email@example.com",
-        phone: "+1234567890",
-        location: "Your City, Country",
+        name: "Seam Sikder Nahid",
+        tagline: "Student | Cybersecurity Enthusiast | Aspiring Web3 Security Researcher  | Entrepreneur",
+        email: "seamsikdernahid@gmail.com",
+        phone: "+8801307730121",
+        location: "Savar, Dhaka, Bangladesh",
         bio: "Passionate about cybersecurity, technology innovation, and building impactful solutions. With expertise spanning from penetration testing to full-stack development, I'm on a mission to make the digital world more secure.",
         mission: "To leverage technology and cybersecurity expertise to create secure, innovative solutions that make a positive impact on businesses and society.",
         vision: "To become a leading cybersecurity entrepreneur, building products that protect millions while mentoring the next generation of security professionals."
@@ -13,10 +13,10 @@ const websiteData = {
 
     education: [
         {
-            degree: "Bachelor of Science in Computer Science",
-            institution: "University Name",
-            year: "2020 - 2024",
-            description: "Specialized in Cybersecurity and Network Security. GPA: 3.8/4.0",
+            degree: "Bachelor of Science in Computer Science & Engineering",
+            institution: "Uttara University",
+            year: "2023 - 2027",
+            description: "Specialized in Cybersecurity and Network Security. GPA: 3.15/4.0",
             achievements: [
                 "Dean's List all semesters",
                 "Led Cybersecurity Club",
@@ -197,11 +197,12 @@ const websiteData = {
     ],
 
     social: {
-        github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourusername",
-        twitter: "https://twitter.com/yourusername",
-        instagram: "https://instagram.com/yourusername",
-        medium: "https://medium.com/@yourusername"
+        github: "https://github.com/seam-sikder-nahid",
+        linkedin: "https://linkedin.com/in/seam-sikder-nahid",
+        twitter: "https://x.com/SeamSikderNahid",
+        instagram: "https://instagram.com/seam_sikder_nahid",
+        facebook: "https://facebook.com/seam.sikder.nahid",
+        medium: "https://medium.com/@SeamSikderNahid"
     }
 };
 
