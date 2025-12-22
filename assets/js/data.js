@@ -213,12 +213,19 @@ const navigationItems = [
     { name: "Education", hash: "education", icon: "fa-graduation-cap" },
     { name: "Skills", hash: "skills", icon: "fa-code" },
     { name: "Projects", hash: "projects", icon: "fa-laptop-code" },
-    { name: "Blog", hash: "blog", icon: "fa-blog" },
+    { 
+        name: "Blog", 
+        hash: "blog", 
+        icon: "fa-blog",
+        dropdown: [
+            { name: "Articles", hash: "blog", icon: "fa-newspaper" },
+            { name: "Journal", hash: "journal", icon: "fa-book" }
+        ]
+    },
     { name: "Portfolio", hash: "portfolio", icon: "fa-briefcase" },
     { name: "Timeline", hash: "timeline", icon: "fa-clock" },
     { name: "Business", hash: "business", icon: "fa-chart-line" },
     { name: "Gallery", hash: "gallery", icon: "fa-images" },
-    { name: "Journal", hash: "journal", icon: "fa-book" },
     { name: "Resume", hash: "resume", icon: "fa-file-alt" },
     { name: "Contact", hash: "contact", icon: "fa-envelope" }
 ];
