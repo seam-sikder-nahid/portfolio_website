@@ -131,6 +131,7 @@ body {
 
 .nav-menu li {
     display: inline-block;
+    position: relative;
 }
 
 .nav-menu li a {
@@ -156,6 +157,68 @@ body {
     color: var(--primary-color);
     background: rgba(0, 212, 255, 0.1);
     transform: translateY(-2px);
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(18, 23, 54, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    min-width: 180px;
+    padding: 10px 0;
+    margin-top: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    padding: 12px 20px;
+    border-radius: 0;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(0, 212, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.dropdown-menu li a i {
+    width: 20px;
 }
 
 .nav-toggle {
@@ -744,6 +807,7 @@ body {
         margin: 0;
         display: block;
         width: 100%;
+        position: relative;
     }
     
     .nav-menu li a {
@@ -756,6 +820,36 @@ body {
     
     .nav-menu li a i {
         display: inline-block;
+    }
+    
+    /* Mobile Dropdown Styles */
+    .dropdown-menu {
+        position: static;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transform: none;
+        margin-top: 0;
+        background: rgba(0, 0, 0, 0.3);
+        border: none;
+        border-radius: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        max-height: 300px;
+    }
+    
+    .dropdown-toggle::after {
+        margin-left: auto;
+    }
+    
+    .dropdown-menu li a {
+        padding-left: 40px;
+        font-size: 0.95rem;
     }
     
     .nav-toggle {
