@@ -32,13 +32,38 @@ function generateNavigation() {
     const navMenu = document.getElementById('navMenu');
     if (!navMenu) return;
 
-    navMenu.innerHTML = navigationItems.map(item => `
-        <li>
-            <a href="#${item.hash}">
-                <i class="fas ${item.icon}"></i> ${item.name}
-            </a>
-        </li>
-    `).join('');
+    navMenu.innerHTML = navigationItems.map(item => {
+        // Check if item has dropdown
+        if (item.dropdown) {
+            return `
+                <li class="dropdown">
+                    <a href="#${item.hash}" class="dropdown-toggle">
+                        <i class="fas ${item.icon}"></i> ${item.name}
+                    </a>
+                    <ul class="dropdown-menu">
+                        ${item.dropdown.map(subItem => `
+                            <li>
+                                <a href="#${subItem.hash}">
+                                    <i class="fas ${subItem.icon}"></i> ${subItem.name}
+                                </a>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </li>
+            `;
+        } else {
+            return `
+                <li>
+                    <a href="#${item.hash}">
+                        <i class="fas ${item.icon}"></i> ${item.name}
+                    </a>
+                </li>
+            `;
+        }
+    }).join('');
+
+    // Add mobile dropdown toggle functionality
+    initDropdownMobile();
 }
 
 function initScrollEffects() {
@@ -85,6 +110,30 @@ function initMobileMenu() {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
         }
+    });
+}
+
+function initDropdownMobile() {
+    // For mobile: toggle dropdown on click
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        toggle.addEventListener('click', (e) => {
+            // On mobile, prevent navigation and toggle dropdown
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
     });
 }
 
