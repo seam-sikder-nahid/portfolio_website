@@ -1,6 +1,6 @@
 // Data Structure for Dynamic Content
 const websiteData = {
-    personal: {
+       personal: {
         name: "Seam Sikder Nahid",
         tagline: "Student | Cybersecurity Enthusiast | Aspiring Web3 Security Researcher  | Entrepreneur",
         email: "seamsikdernahid@gmail.com",
@@ -11,7 +11,7 @@ const websiteData = {
         vision: "To become a leading cybersecurity entrepreneur, building products that protect millions while mentoring the next generation of security professionals."
     },
 
-    education: [
+       education: [
         {
             degree: "Bachelor of Science in Computer Science & Engineering",
             institution: "Uttara University",
@@ -105,30 +105,68 @@ const websiteData = {
     blog: [
         {
             id: 1,
-            title: "The Future of Cybersecurity in 2024",
-            date: "December 15, 2024",
-            excerpt: "Exploring emerging threats and defense strategies in the evolving landscape of cybersecurity...",
-            content: "Full blog content here...",
+            slug: "nmap-complete-guide",
+            title: "Nmap Complete Guide: Network Scanning Mastery",
+            date: "December 20, 2024",
+            author: "Your Name",
+            excerpt: "Learn everything about Nmap from basic port scanning to advanced techniques. Master network reconnaissance with practical examples and real-world use cases.",
             category: "Cybersecurity",
-            readTime: "5 min read"
+            tags: ["Nmap", "Network Security", "Penetration Testing"],
+            readTime: "12 min read",
+            coverImage: "assets/images/blog/nmap-cover.jpg",
+            featured: true
         },
         {
             id: 2,
-            title: "Building Secure APIs: Best Practices",
-            date: "December 10, 2024",
-            excerpt: "A comprehensive guide to designing and implementing secure RESTful APIs...",
-            content: "Full blog content here...",
+            slug: "python-security-automation",
+            title: "Automating Security Tasks with Python",
+            date: "December 15, 2024",
+            author: "Your Name",
+            excerpt: "Discover how to automate repetitive security tasks using Python. Build powerful scripts for vulnerability scanning, log analysis, and threat detection.",
             category: "Development",
-            readTime: "8 min read"
+            tags: ["Python", "Automation", "Security"],
+            readTime: "10 min read",
+            coverImage: "assets/images/blog/python-cover.jpg",
+            featured: true
         },
         {
             id: 3,
-            title: "From Developer to Entrepreneur: My Journey",
+            slug: "web-application-security",
+            title: "Web Application Security: Complete Checklist",
+            date: "December 10, 2024",
+            author: "Your Name",
+            excerpt: "Comprehensive security checklist for web applications covering OWASP Top 10, authentication, authorization, and secure coding practices.",
+            category: "Cybersecurity",
+            tags: ["Web Security", "OWASP", "Secure Coding"],
+            readTime: "15 min read",
+            coverImage: "assets/images/blog/web-security-cover.jpg",
+            featured: false
+        },
+        {
+            id: 4,
+            slug: "ctf-beginners-guide",
+            title: "CTF for Beginners: Getting Started Guide",
             date: "December 5, 2024",
-            excerpt: "Lessons learned transitioning from technical roles to building my own startup...",
-            content: "Full blog content here...",
-            category: "Business",
-            readTime: "6 min read"
+            author: "Your Name",
+            excerpt: "Complete beginner's guide to Capture The Flag competitions. Learn essential skills, tools, and strategies to start your CTF journey.",
+            category: "Cybersecurity",
+            tags: ["CTF", "Learning", "Hacking"],
+            readTime: "8 min read",
+            coverImage: "assets/images/blog/ctf-cover.jpg",
+            featured: false
+        },
+        {
+            id: 5,
+            slug: "building-secure-apis",
+            title: "Building Secure REST APIs: Best Practices",
+            date: "November 28, 2024",
+            author: "Your Name",
+            excerpt: "Learn how to design and implement secure RESTful APIs. Cover authentication, authorization, rate limiting, and common vulnerabilities.",
+            category: "Development",
+            tags: ["API", "REST", "Security"],
+            readTime: "10 min read",
+            coverImage: "assets/images/blog/api-security-cover.jpg",
+            featured: false
         }
     ],
 
@@ -196,7 +234,7 @@ const websiteData = {
         "Built security tools used by 1000+ organizations"
     ],
 
-    social: {
+     social: {
         github: "https://github.com/seam-sikder-nahid",
         linkedin: "https://linkedin.com/in/seam-sikder-nahid",
         twitter: "https://x.com/SeamSikderNahid",
@@ -224,7 +262,7 @@ const navigationItems = [
     },
     { name: "Portfolio", hash: "portfolio", icon: "fa-briefcase" },
     { name: "Timeline", hash: "timeline", icon: "fa-clock" },
-   // { name: "Business", hash: "business", icon: "fa-chart-line" },
+    { name: "Business", hash: "business", icon: "fa-chart-line" },
     { name: "Gallery", hash: "gallery", icon: "fa-images" },
     { name: "Resume", hash: "resume", icon: "fa-file-alt" },
     { name: "Contact", hash: "contact", icon: "fa-envelope" }
