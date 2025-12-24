@@ -188,23 +188,106 @@ class Router {
     }
 
     initBlogPage() {
-        const container = document.getElementById('blog-grid');
+        // Render featured posts
+        const featuredContainer = document.getElementById('featured-posts');
+        const featuredPosts = websiteData.blog.filter(post => post.featured);
+        
+        if (featuredContainer && featuredPosts.length > 0) {
+            featuredContainer.innerHTML = `
+                <h3 style="font-size: 1.8rem; margin-bottom: 30px; color: var(--primary-color);">
+                    <i class="fas fa-star"></i> Featured Posts
+                </h3>
+                <div class="featured-grid">
+                    ${featuredPosts.map(post => this.createBlogCard(post, true)).join('')}
+                </div>
+            `;
+        }
+
+        // Render all posts
+        const container = document.getElementById('blog-posts-grid');
         if (container && websiteData.blog) {
-            container.innerHTML = websiteData.blog.map(post => `
-                <div class="card">
-                    <div class="card-content">
-                        <div style="color: var(--primary-color); font-size: 0.9rem; margin-bottom: 10px;">
-                            ${post.date} • ${post.readTime}
+            container.innerHTML = websiteData.blog
+                .map(post => this.createBlogCard(post, false))
+                .join('');
+            
+            // Add click handlers
+            this.initBlogCardClicks();
+        }
+
+        // Category filter
+        this.initCategoryFilter();
+    }
+
+    createBlogCard(post, isFeatured) {
+        return `
+            <div class="blog-card ${isFeatured ? 'featured' : ''}" data-slug="${post.slug}">
+                <div class="blog-card-image">
+                    ${post.coverImage ? 
+                        `<img src="${post.coverImage}" alt="${post.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">` : 
+                        ''
+                    }
+                    <i class="fas fa-newspaper" style="${post.coverImage ? 'display:none;' : ''}"></i>
+                    <span class="blog-card-badge ${isFeatured ? 'featured-badge' : ''}">${post.category}</span>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <span><i class="far fa-calendar"></i> ${post.date}</span>
+                        <span><i class="far fa-clock"></i> ${post.readTime}</span>
+                    </div>
+                    <h3 class="blog-card-title">${post.title}</h3>
+                    <p class="blog-card-excerpt">${post.excerpt}</p>
+                    <div class="blog-card-tags">
+                        ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-card-author">
+                            <i class="fas fa-user-circle"></i> ${post.author}
                         </div>
-                        <h3 class="card-title">${post.title}</h3>
-                        <p class="card-description">${post.excerpt}</p>
-                        <div style="margin-top: 20px;">
-                            <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Read More</a>
-                        </div>
+                        <span class="blog-card-btn">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </span>
                     </div>
                 </div>
-            `).join('');
-        }
+            </div>
+        `;
+    }
+
+    initBlogCardClicks() {
+        const blogCards = document.querySelectorAll('.blog-card');
+        blogCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const slug = card.getAttribute('data-slug');
+                window.location.href = `blog/${slug}.html`;
+            });
+        });
+    }
+
+    initCategoryFilter() {
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.getAttribute('data-category');
+                this.filterBlogsByCategory(category);
+            });
+        });
+    }
+
+    filterBlogsByCategory(category) {
+        const container = document.getElementById('blog-posts-grid');
+        if (!container) return;
+
+        const filteredPosts = websiteData.blog.filter(post => 
+            post.category === category
+        );
+
+        container.innerHTML = filteredPosts
+            .map(post => this.createBlogCard(post, false))
+            .join('');
+        
+        this.initBlogCardClicks();
+
+        // Scroll to posts
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     initTimelinePage() {
