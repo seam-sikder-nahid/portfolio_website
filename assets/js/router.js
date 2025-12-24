@@ -255,8 +255,10 @@ class Router {
     initBlogCardClicks() {
         const blogCards = document.querySelectorAll('.blog-card');
         blogCards.forEach(card => {
-            card.addEventListener('click', () => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
                 const slug = card.getAttribute('data-slug');
+                // Navigate directly to blog post (not through router)
                 window.location.href = `blog/${slug}.html`;
             });
         });
