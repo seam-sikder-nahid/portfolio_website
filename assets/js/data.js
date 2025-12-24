@@ -103,6 +103,19 @@ const websiteData = {
     ],
 
     blog: [
+    {
+        id: 999,
+        slug: "test",
+        title: "Test Blog Post",
+        date: "December 25, 2024",
+        author: "Your Name",
+        excerpt: "This is a test to verify the blog system is working correctly.",
+        category: "Test",
+        tags: ["Test"],
+        readTime: "1 min read",
+        coverImage: "",
+        featured: true
+    },
         {
             id: 1,
             slug: "nmap-complete-guide",
