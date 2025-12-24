@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete guide to Nmap - Learn network scanning from basics to advanced techniques">
+    <title>Nmap Complete Guide | Your Blog</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-post-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+        }
+
+        .blog-post-header {
+            margin-bottom: 40px;
+        }
+
+        .blog-post-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-title {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .blog-post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-post-cover {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-post-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-post-cover i {
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .blog-post-content {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .blog-post-content h2 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin: 40px 0 20px;
+        }
+
+        .blog-post-content h3 {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin: 30px 0 15px;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content ul, 
+        .blog-post-content ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-post-content code {
+            background: var(--bg-card);
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+
+        .blog-post-content pre {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .blog-post-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-primary);
+        }
+
+        .blog-post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 50px 0;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-post-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            gap: 15px;
+        }
+
+        .recommended-posts {
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .recommended-posts h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .recommended-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .recommended-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            text-decoration: none;
+            display: block;
+        }
+
+        .recommended-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .recommended-card h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .recommended-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .blog-post-title {
+                font-size: 2rem;
+            }
+
+            .blog-post-cover {
+                height: 250px;
+            }
+
+            .blog-post-content {
+                font-size: 1rem;
+            }
+
+            .recommended-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Navigation for Blog Posts -->
+    <nav style="position: fixed; top: 0; width: 100%; background: rgba(10, 14, 39, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 20px; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);">
+        <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="../index.html#home" style="color: var(--text-primary); text-decoration: none; font-size: 1.3rem; font-weight: 700;">
+                <span style="background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">◈</span> Digital Universe
+            </a>
+            <a href="../index.html#blog" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">← Back to Blog</a>
+        </div>
+    </nav>
+
+    <article class="blog-post-container">
+        <a href="../index.html#blog" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to All Posts
+        </a>
+
+        <header class="blog-post-header">
+            <span class="blog-post-category">Cybersecurity</span>
+            <h1 class="blog-post-title">Nmap Complete Guide: Network Scanning Mastery</h1>
+            <div class="blog-post-meta">
+                <span><i class="fas fa-user-circle"></i> Your Name</span>
+                <span><i class="far fa-calendar"></i> December 20, 2024</span>
+                <span><i class="far fa-clock"></i> 12 min read</span>
+            </div>
+        </header>
+
+        <div class="blog-post-cover">
+            <!-- Add your cover image here -->
+            <i class="fas fa-network-wired"></i>
+        </div>
+
+        <div class="blog-post-content">
+            <p>
+                Nmap (Network Mapper) is one of the most powerful and versatile network scanning tools used by security professionals, system administrators, and penetration testers worldwide. In this comprehensive guide, we'll explore everything you need to know about Nmap, from basic scans to advanced techniques.
+            </p>
+
+            <h2>What is Nmap?</h2>
+            <p>
+                Nmap is an open-source network exploration and security auditing tool. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets to determine:
+            </p>
+            <ul>
+                <li>What hosts are available on the network</li>
+                <li>What services (application name and version) those hosts are offering</li>
+                <li>What operating systems they are running</li>
+                <li>What type of packet filters/firewalls are in use</li>
+                <li>And dozens of other characteristics</li>
+            </ul>
+
+            <h2>Installation</h2>
+            <p>Installing Nmap is straightforward across different platforms:</p>
+            
+            <h3>Linux</h3>
+            <pre><code># Ubuntu/Debian
+sudo apt-get update
+sudo apt-get install nmap
+
+# CentOS/RHEL
+sudo yum install nmap</code></pre>
+
+            <h3>macOS</h3>
+            <pre><code>brew install nmap</code></pre>
+
+            <h3>Windows</h3>
+            <p>Download the installer from the official Nmap website at <code>nmap.org</code> and run the setup wizard.</p>
+
+            <h2>Basic Scanning Techniques</h2>
+            
+            <h3>1. Simple Host Discovery</h3>
+            <p>The most basic Nmap scan checks if a host is online:</p>
+            <pre><code>nmap 192.168.1.1</code></pre>
+
+            <h3>2. Port Scanning</h3>
+            <p>Scan specific ports or port ranges:</p>
+            <pre><code># Scan a single port
+nmap -p 80 192.168.1.1
+
+# Scan multiple ports
+nmap -p 80,443,8080 192.168.1.1
+
+# Scan port range
+nmap -p 1-1000 192.168.1.1
+
+# Scan all ports
+nmap -p- 192.168.1.1</code></pre>
+
+            <h3>3. Service Version Detection</h3>
+            <p>Identify services and their versions:</p>
+            <pre><code>nmap -sV 192.168.1.1</code></pre>
+
+            <h2>Advanced Techniques</h2>
+
+            <h3>OS Detection</h3>
+            <p>Nmap can attempt to identify the operating system:</p>
+            <pre><code>nmap -O 192.168.1.1</code></pre>
+
+            <h3>Aggressive Scan</h3>
+            <p>Combines OS detection, version detection, script scanning, and traceroute:</p>
+            <pre><code>nmap -A 192.168.1.1</code></pre>
+
+            <h3>Stealth Scanning</h3>
+            <p>SYN scan (also known as half-open scan) is less likely to be detected:</p>
+            <pre><code>sudo nmap -sS 192.168.1.1</code></pre>
+
+            <h2>Nmap Scripting Engine (NSE)</h2>
+            <p>
+                NSE is one of Nmap's most powerful features. It allows users to write and share scripts to automate tasks like vulnerability detection, backdoor detection, and more.
+            </p>
+
+            <h3>Running NSE Scripts</h3>
+            <pre><code># Run default scripts
+nmap -sC 192.168.1.1
+
+# Run specific script
+nmap --script=http-title 192.168.1.1
+
+# Run multiple scripts
+nmap --script=http-* 192.168.1.1</code></pre>
+
+            <h2>Practical Use Cases</h2>
+
+            <h3>Network Inventory</h3>
+            <p>Discover all devices on your network:</p>
+            <pre><code>nmap -sn 192.168.1.0/24</code></pre>
+
+            <h3>Vulnerability Scanning</h3>
+            <p>Check for known vulnerabilities:</p>
+            <pre><code>nmap --script vuln 192.168.1.1</code></pre>
+
+            <h3>Performance Optimization</h3>
+            <p>Speed up scans with timing templates:</p>
+            <pre><code># Fast scan
+nmap -T4 192.168.1.1
+
+# Aggressive timing
+nmap -T5 192.168.1.1</code></pre>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Always get permission</strong> before scanning networks you don't own</li>
+                <li><strong>Start with less intrusive scans</strong> before moving to aggressive techniques</li>
+                <li><strong>Use output files</strong> to save scan results: <code>nmap -oN output.txt target</code></li>
+                <li><strong>Combine techniques</strong> for comprehensive results</li>
+                <li><strong>Stay updated</strong> with the latest Nmap version and NSE scripts</li>
+            </ul>
+
+            <h2>Legal and Ethical Considerations</h2>
+            <p>
+                <strong>Important:</strong> Unauthorized network scanning can be illegal in many jurisdictions. Always ensure you have explicit permission before scanning any network or system you don't own. Use Nmap responsibly and ethically.
+            </p>
+
+            <h2>Conclusion</h2>
+            <p>
+                Nmap is an essential tool in any security professional's toolkit. From simple host discovery to complex vulnerability assessments, Nmap provides the flexibility and power needed for comprehensive network analysis. Practice these techniques in a controlled environment, stay updated with new features, and always use Nmap ethically and legally.
+            </p>
+
+            <p>
+                Remember: With great power comes great responsibility. Use Nmap to improve security, not to compromise it.
+            </p>
+        </div>
+
+        <div class="blog-post-tags">
+            <span class="blog-post-tag">Nmap</span>
+            <span class="blog-post-tag">Network Security</span>
+            <span class="blog-post-tag">Penetration Testing</span>
+            <span class="blog-post-tag">Cybersecurity</span>
+            <span class="blog-post-tag">Security Tools</span>
+        </div>
+
+        <section class="recommended-posts">
+            <h2><i class="fas fa-star"></i> Recommended Reading</h2>
+            <div class="recommended-grid">
+                <a href="python-security-automation.html" class="recommended-card">
+                    <h3>Automating Security with Python</h3>
+                    <p>Learn how to build powerful security automation scripts using Python for vulnerability scanning and threat detection.</p>
+                    <span style="color: var(--primary-color); font-size: 0.85rem; margin-top: 10px; display: inline-block;">Read More →</span>
+                </a>
+
+                <a href="web-application-security.html" class="recommended-card">
+                    <h3>Web Application Security Checklist</h3>
+                    <p>Comprehensive guide covering OWASP Top 10, authentication, authorization, and secure coding practices.</p>
+                    <span style="color: var(--primary-color); font-size: 0.85rem; margin-top: 10px; display: inline-block;">Read More →</span>
+                </a>
+
+                <a href="ctf-beginners-guide.html" class="recommended-card">
+                    <h3>CTF for Beginners</h3>
+                    <p>Complete beginner's guide to Capture The Flag competitions with essential skills and strategies.</p>
+                    <span style="color: var(--primary-color); font-size: 0.85rem; margin-top: 10px; display: inline-block;">Read More →</span>
+                </a>
+            </div>
+        </section>
+    </article>
+
+    <footer style="background: var(--bg-darker); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <p style="color: var(--text-secondary);">&copy; 2024 Digital Universe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
