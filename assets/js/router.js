@@ -32,6 +32,11 @@ class Router {
         // Get current hash without #
         let hash = window.location.hash.slice(1) || 'home';
         
+        // Don't handle blog post URLs - they are separate pages
+        if (window.location.pathname.includes('/blog/')) {
+            return;
+        }
+        
         // If route doesn't exist, default to home
         if (!this.routes[hash]) {
             hash = 'home';
@@ -257,9 +262,12 @@ class Router {
         blogCards.forEach(card => {
             card.addEventListener('click', (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 const slug = card.getAttribute('data-slug');
-                // Navigate directly to blog post (not through router)
-                window.location.href = `blog/${slug}.html`;
+                // Use absolute path to avoid router interception
+                const currentPath = window.location.pathname;
+                const basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+                window.location.href = `${window.location.origin}/blog/${slug}.html`;
             });
         });
     }
