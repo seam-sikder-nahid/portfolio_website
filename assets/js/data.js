@@ -224,7 +224,7 @@ const navigationItems = [
     },
     { name: "Portfolio", hash: "portfolio", icon: "fa-briefcase" },
     { name: "Timeline", hash: "timeline", icon: "fa-clock" },
-    { name: "Business", hash: "business", icon: "fa-chart-line" },
+   // { name: "Business", hash: "business", icon: "fa-chart-line" },
     { name: "Gallery", hash: "gallery", icon: "fa-images" },
     { name: "Resume", hash: "resume", icon: "fa-file-alt" },
     { name: "Contact", hash: "contact", icon: "fa-envelope" }
