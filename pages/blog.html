@@ -2,60 +2,58 @@
     <section class="section">
         <div class="section-header">
             <h2 class="section-title">Blog & Articles</h2>
-            <p class="section-subtitle">Thoughts on cybersecurity, technology, and entrepreneurship</p>
+            <p class="section-subtitle">Insights on cybersecurity, development, and technology</p>
         </div>
 
-        <div id="blog-grid" class="card-grid">
-            <!-- Blog posts will be loaded dynamically -->
-        </div>
+        <!-- Featured Posts -->
+        <div id="featured-posts" style="margin-bottom: 60px;"></div>
+
+        <!-- All Posts -->
+        <div id="blog-posts-grid" class="blog-posts-grid"></div>
     </section>
 
     <section class="section" style="background: var(--bg-darker);">
         <div class="section-header">
-            <h2 class="section-title">Popular Topics</h2>
+            <h2 class="section-title">Browse by Category</h2>
         </div>
 
         <div class="card-grid">
-            <div class="card">
+            <div class="card category-card" data-category="Cybersecurity">
                 <div class="card-content">
                     <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3 class="card-title">Cybersecurity</h3>
                     <p class="card-description">
-                        In-depth articles on penetration testing, vulnerability research, 
-                        security tools, and defensive strategies.
+                        Penetration testing, security tools, vulnerability research, and defensive strategies.
                     </p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card category-card" data-category="Development">
                 <div class="card-content">
                     <div class="card-icon"><i class="fas fa-code"></i></div>
                     <h3 class="card-title">Development</h3>
                     <p class="card-description">
-                        Tutorials on secure coding practices, web development, 
-                        and building scalable applications.
+                        Web development, secure coding practices, APIs, and software engineering.
                     </p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card category-card" data-category="Business">
                 <div class="card-content">
                     <div class="card-icon"><i class="fas fa-rocket"></i></div>
-                    <h3 class="card-title">Startups & Business</h3>
+                    <h3 class="card-title">Business & Startups</h3>
                     <p class="card-description">
-                        Insights from my entrepreneurial journey, startup strategies, 
-                        and lessons learned in tech business.
+                        Entrepreneurship, startup strategies, and lessons from building tech businesses.
                     </p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card category-card" data-category="Learning">
                 <div class="card-content">
-                    <div class="card-icon"><i class="fas fa-brain"></i></div>
-                    <h3 class="card-title">Learning & Growth</h3>
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="card-title">Learning & Career</h3>
                     <p class="card-description">
-                        Resources for continuous learning, career development, 
-                        and staying current in tech.
+                        Career advice, learning resources, certifications, and skill development.
                     </p>
                 </div>
             </div>
@@ -68,3 +66,175 @@
         window.router.initBlogPage();
     }
 </script>
+
+<style>
+/* Blog Card Styles */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.blog-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.blog-card-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-card-image i {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.blog-card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.blog-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.blog-card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.blog-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.blog-card-excerpt {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.blog-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.blog-tag {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.blog-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blog-card-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.blog-card-btn {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.blog-card-btn:hover {
+    gap: 10px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.featured-badge {
+    background: var(--accent-color);
+    color: white;
+}
+
+.category-card {
+    cursor: pointer;
+}
+
+.category-card:hover {
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
