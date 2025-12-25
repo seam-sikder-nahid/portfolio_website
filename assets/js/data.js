@@ -103,30 +103,17 @@ const websiteData = {
     ],
 
     blog: [
-    {
-        id: 999,
-        slug: "test",
-        title: "Test Blog Post",
-        date: "December 25, 2024",
-        author: "Your Name",
-        excerpt: "This is a test to verify the blog system is working correctly.",
-        category: "Test",
-        tags: ["Test"],
-        readTime: "1 min read",
-        coverImage: "",
-        featured: true
-    },
         {
             id: 1,
             slug: "nmap-complete-guide",
             title: "Nmap Complete Guide: Network Scanning Mastery",
             date: "December 20, 2024",
-            author: "Your Name",
+            author: "Seam Sikder Nahi",
             excerpt: "Learn everything about Nmap from basic port scanning to advanced techniques. Master network reconnaissance with practical examples and real-world use cases.",
-            category: "Cybersecurity",
+            category: "Cybersecurity","Networking",
             tags: ["Nmap", "Network Security", "Penetration Testing"],
             readTime: "12 min read",
-            coverImage: "assets/images/blog/nmap-cover.jpg",
+            coverImage: "assets/Images/nmap.jpeg",
             featured: true
         },
         {
