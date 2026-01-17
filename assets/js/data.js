@@ -11,7 +11,7 @@ const websiteData = {
         vision: "To become a leading cybersecurity entrepreneur, building products that protect millions while mentoring the next generation of security professionals."
     },
 
-      /* education: [
+       education: [
         {
             degree: "Bachelor of Science in Computer Science & Engineering",
             institution: "Uttara University",
@@ -43,8 +43,8 @@ const websiteData = {
             year: "2025",
             description: "Earned the certification by successfully passing the CCEP exam, demonstrating expertise in cybersecurity education, ethical hacking principles, and practical knowledge to teach cybersecurity concepts.",
             credentialUrl: "https://your-credential-url.com/ccep",
-            certificateImage: "assets/images/certificates/ccep.jpg",
-            certificatePdf: "assets/certificates/ccep.pdf",
+            certificateImage: "assets/images/Certificate/certified_certificate_page-0001.jpg",
+            certificatePdf: "assets/certificates/certified_certificate.pdf",
             skills: ["Cybersecurity Education", "Ethical Hacking", "Teaching"]
         },
         {
@@ -54,8 +54,8 @@ const websiteData = {
             year: "2025",
             description: "Earned certification demonstrating in-depth knowledge of ransomware threats, mitigation strategies, and organizational defense best practices through eLearning, malware analysis, and practical table-top exercises.",
             credentialUrl: "https://your-credential-url.com/crpo",
-            certificateImage: "assets/images/certificates/crpo.jpg",
-            certificatePdf: "assets/certificates/crpo.pdf",
+            certificateImage: "assets/images/Certificate/certificate-crpo-certified-ransomware-protection-officer-90-days-64d63660ac9488bbf50f3e76_page-0001.jpg",
+            certificatePdf: "assets/certificates/certificate-crpo-certified-ransomware-protection-officer-90-days-64d63660ac9488bbf50f3e76.pdf",
             skills: ["Ransomware Analysis", "Threat Mitigation", "Incident Response"]
         },
         {
@@ -65,8 +65,8 @@ const websiteData = {
             year: "2025",
             description: "Earned certification demonstrating proficiency in identifying, preventing, and responding to phishing attacks through practical scenarios, interactive exercises, and real-world case studies.",
             credentialUrl: "https://your-credential-url.com/cpps",
-            certificateImage: "assets/images/certificates/cpps.jpg",
-            certificatePdf: "assets/certificates/cpps.pdf",
+            certificateImage: "assets/images/Certificate/CPPS_Certificate_page-0001.jpg",
+            certificatePdf: "assets/certificates/CPPS_Certificate.pdf",
             skills: ["Phishing Detection", "Email Security", "Social Engineering"]
         },
         {
@@ -76,8 +76,8 @@ const websiteData = {
             year: "2025",
             description: "Learned threat modeling, reconnaissance, and practical vulnerability analysis through hands-on labs and real-world scenarios.",
             credentialUrl: "https://tryhackme.com/your-profile",
-            certificateImage: "assets/images/certificates/thm-cyber101.jpg",
-            certificatePdf: "assets/certificates/thm-cyber101.pdf",
+            certificateImage: "assets/images/Certificate/THM-MZQMTJPIX6_page-0001.jpg",
+            certificatePdf: "assets/certificates/THM-MZQMTJPIX6.pdf",
             skills: ["Threat Modeling", "Reconnaissance", "Vulnerability Analysis"]
         },
         {
@@ -88,7 +88,7 @@ const websiteData = {
             description: "Completed hands-on labs in basic Linux, networking, and penetration testing fundamentals.",
             credentialUrl: "https://tryhackme.com/your-profile",
             certificateImage: "assets/images/certificates/thm-fundamentals.jpg",
-            certificatePdf: "assets/certificates/thm-fundamentals.pdf",
+            certificatePdf: "assets/certificates/THM-AWSS94LDVT.pdf",
             skills: ["Linux", "Networking", "Penetration Testing"]
         },
         {
@@ -114,10 +114,10 @@ const websiteData = {
             skills: ["Python", "Data Structures", "Automation"]
         }
     ],
-*/
+
 
        
-    education: [
+  /*  education: [
         {
             degree: "Bachelor of Science in Computer Science & Engineering",
             institution: "Uttara University",
@@ -221,6 +221,7 @@ const websiteData = {
             ]
         }
     ],
+    */
     skills: {
         cybersecurity: [
             "Penetration Testing", "Vulnerability Assessment", "Network Security",
