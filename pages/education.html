@@ -41,7 +41,7 @@ I strongly believe in hands-on learning and continuously improve my skills throu
                 <div class="card-content">
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
                         <div class="card-icon" style="margin: 0;"><i class="fas fa-certificate"></i></div>
-                        <div> -->
+                        <div>
                             <h3 class="card-title" style="margin: 0;">Professional Certifications</h3>
                             <p style="color: var(--primary-color); margin-top: 5px;">Industry-Recognized | 2021 - Present</p>
                         </div>
@@ -147,3 +147,452 @@ I strongly believe in hands-on learning and continuously improve my skills throu
         </div>
     </section>
 </div>
+-->
+
+                      <div class="card" style="padding: 40px; margin-bottom: 30px;">
+                <div class="card-content">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div class="card-icon" style="margin: 0;"><i class="fas fa-certificate"></i></div>
+                        <div>
+                            <h3 class="card-title" style="margin: 0;">Professional Certifications</h3>
+                            <p style="color: var(--primary-color); margin-top: 5px;">Industry-Recognized | 2020 - Present</p>
+                        </div>
+                    </div>
+                    <p class="card-description" style="margin-bottom: 30px;">
+                        Continuously expanding expertise through professional certifications and specialized training programs.
+                    </p>
+
+                    <!-- Interactive Certification Cards -->
+                    <div id="certifications-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background: var(--bg-darker);">
+        <div class="section-header">
+            <h2 class="section-title">Major Achievements</h2>
+            <p class="section-subtitle">Recognition and milestones</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 class="card-title">National CTF Winner</h3>
+                    <p class="card-description">
+                        First place in National Cybersecurity Competition 2022, solving 45+ challenges
+                        across web, crypto, forensics, and reverse engineering categories.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="card-title">Published Researcher</h3>
+                    <p class="card-description">
+                        Authored paper on "Automated Network Vulnerability Detection Using Machine Learning"
+                        presented at IEEE Security Conference.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-bug"></i></div>
+                    <h3 class="card-title">15+ CVE Discoveries</h3>
+                    <p class="card-description">
+                        Identified and responsibly disclosed critical vulnerabilities in major software
+                        including enterprise applications and open-source projects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 class="card-title">Community Educator</h3>
+                    <p class="card-description">
+                        Mentored 50+ aspiring cybersecurity professionals and delivered workshops
+                        at 10+ security conferences and educational institutions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="card-title">Open Source Contributor</h3>
+                    <p class="card-description">
+                        Active contributor to major security tools and frameworks with 500+ GitHub stars
+                        and tools used by 1000+ organizations worldwide.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-microphone"></i></div>
+                    <h3 class="card-title">Conference Speaker</h3>
+                    <p class="card-description">
+                        Presented at multiple cybersecurity conferences on topics including
+                        penetration testing, secure development, and threat intelligence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+/* Certification Card Styles */
+.cert-card {
+    display: flex;
+    gap: 30px;
+    background: rgba(18, 23, 54, 0.6);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    transition: all 0.3s ease;
+    align-items: center;
+}
+
+.cert-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.cert-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.cert-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.cert-title-group h4 {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.cert-issuer {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.cert-year {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.cert-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 15px 0;
+    font-size: 0.95rem;
+}
+
+.cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0 20px;
+}
+
+.cert-skill-tag {
+    background: rgba(0, 212, 255, 0.08);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.cert-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cert-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.cert-btn-primary {
+    background: var(--gradient-accent);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.cert-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+}
+
+.cert-btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cert-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+}
+
+.cert-image-container {
+    flex-shrink: 0;
+    width: 280px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cert-image-container:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.cert-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cert-image-container:hover .cert-image {
+    transform: scale(1.1);
+}
+
+.cert-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cert-image-placeholder i {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cert-image-placeholder span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Image Modal */
+.cert-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.cert-modal.active {
+    display: flex;
+}
+
+.cert-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.cert-modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.cert-modal-close:hover {
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cert-card {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+    
+    .cert-image-container {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .cert-header {
+        flex-direction: column;
+    }
+    
+    .cert-actions {
+        flex-direction: column;
+    }
+    
+    .cert-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cert-title-group h4 {
+        font-size: 1.2rem;
+    }
+}
+</style>
+
+<script>
+// Render certifications
+if (typeof websiteData !== 'undefined' && websiteData.certifications) {
+    const container = document.getElementById('certifications-container');
+    
+    if (container) {
+        container.innerHTML = websiteData.certifications.map(cert => `
+            <div class="cert-card">
+                <div class="cert-details">
+                    <div class="cert-header">
+                        <div class="cert-title-group">
+                            <h4>${cert.name}</h4>
+                            <div class="cert-issuer">${cert.issuer}</div>
+                        </div>
+                        <span class="cert-year"><i class="far fa-calendar"></i> ${cert.year}</span>
+                    </div>
+                    
+                    <p class="cert-description">${cert.description}</p>
+                    
+                    <div class="cert-skills">
+                        ${cert.skills.map(skill => `<span class="cert-skill-tag">${skill}</span>`).join('')}
+                    </div>
+                    
+                    <div class="cert-actions">
+                        <a href="${cert.credentialUrl}" target="_blank" class="cert-btn cert-btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Show Credential
+                        </a>
+                        <a href="${cert.certificatePdf}" download class="cert-btn cert-btn-secondary">
+                            <i class="fas fa-download"></i> Download Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cert-image-container" onclick="openCertModal('${cert.certificateImage}', '${cert.name}')">
+                    ${cert.certificateImage && cert.certificateImage !== '' ? 
+                        `<img src="${cert.certificateImage}" alt="${cert.name}" class="cert-image" onerror="this.parentElement.innerHTML='<div class=\\'cert-image-placeholder\\'><i class=\\'fas fa-certificate\\'></i><span>Certificate Image</span></div>'">` :
+                        `<div class="cert-image-placeholder">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate Image</span>
+                        </div>`
+                    }
+                </div>
+            </div>
+        `).join('');
+    }
+}
+
+// Image Modal Functions
+function openCertModal(imageSrc, altText) {
+    if (!imageSrc || imageSrc === '') return;
+    
+    let modal = document.getElementById('cert-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'cert-modal';
+        modal.className = 'cert-modal';
+        modal.innerHTML = `
+            <div class="cert-modal-content">
+                <button class="cert-modal-close" onclick="closeCertModal()">×</button>
+                <img id="cert-modal-img" class="cert-modal-image" src="" alt="">
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // Close on background click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeCertModal();
+            }
+        });
+    }
+    
+    const modalImg = document.getElementById('cert-modal-img');
+    modalImg.src = imageSrc;
+    modalImg.alt = altText;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+    const modal = document.getElementById('cert-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeCertModal();
+    }
+});
+</script>
