@@ -23,7 +23,7 @@ const websiteData = {
                 "Published research on network vulnerabilities"
             ]
         },
-        /* {
+         {
             degree: "Certifications",
             institution: "Various",
             year: "2021 - Present",
@@ -34,7 +34,7 @@ const websiteData = {
                 "AWS Certified Solutions Architect"
             ]
         }
-    ], */
+    ], 
                   certifications: [
         {
             id: 1,
