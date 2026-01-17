@@ -23,7 +23,7 @@ const websiteData = {
                 "Published research on network vulnerabilities"
             ]
         },
-        {
+        /* {
             degree: "Certifications",
             institution: "Various",
             year: "2021 - Present",
@@ -33,6 +33,85 @@ const websiteData = {
                 "CompTIA Security+",
                 "AWS Certified Solutions Architect"
             ]
+        }
+    ], */
+                  certifications: [
+        {
+            id: 1,
+            name: "Certified Cybersecurity Educator Professional (CCEP)",
+            issuer: "Red Team Leaders",
+            year: "2025",
+            description: "Earned the certification by successfully passing the CCEP exam, demonstrating expertise in cybersecurity education, ethical hacking principles, and practical knowledge to teach cybersecurity concepts.",
+            credentialUrl: "https://your-credential-url.com/ccep",
+            certificateImage: "assets/images/certificates/ccep.jpg",
+            certificatePdf: "assets/certificates/ccep.pdf",
+            skills: ["Cybersecurity Education", "Ethical Hacking", "Teaching"]
+        },
+        {
+            id: 2,
+            name: "Certified Ransomware Protection Officer (CRPO)",
+            issuer: "EU Cyber Academy",
+            year: "2025",
+            description: "Earned certification demonstrating in-depth knowledge of ransomware threats, mitigation strategies, and organizational defense best practices through eLearning, malware analysis, and practical table-top exercises.",
+            credentialUrl: "https://your-credential-url.com/crpo",
+            certificateImage: "assets/images/certificates/crpo.jpg",
+            certificatePdf: "assets/certificates/crpo.pdf",
+            skills: ["Ransomware Analysis", "Threat Mitigation", "Incident Response"]
+        },
+        {
+            id: 3,
+            name: "Certified Phishing Prevention Specialist (CPPS)",
+            issuer: "Hack & Fix",
+            year: "2025",
+            description: "Earned certification demonstrating proficiency in identifying, preventing, and responding to phishing attacks through practical scenarios, interactive exercises, and real-world case studies.",
+            credentialUrl: "https://your-credential-url.com/cpps",
+            certificateImage: "assets/images/certificates/cpps.jpg",
+            certificatePdf: "assets/certificates/cpps.pdf",
+            skills: ["Phishing Detection", "Email Security", "Social Engineering"]
+        },
+        {
+            id: 4,
+            name: "Cybersecurity 101",
+            issuer: "TryHackMe",
+            year: "2025",
+            description: "Learned threat modeling, reconnaissance, and practical vulnerability analysis through hands-on labs and real-world scenarios.",
+            credentialUrl: "https://tryhackme.com/your-profile",
+            certificateImage: "assets/images/certificates/thm-cyber101.jpg",
+            certificatePdf: "assets/certificates/thm-cyber101.pdf",
+            skills: ["Threat Modeling", "Reconnaissance", "Vulnerability Analysis"]
+        },
+        {
+            id: 5,
+            name: "Cybersecurity Fundamentals",
+            issuer: "TryHackMe",
+            year: "2025",
+            description: "Completed hands-on labs in basic Linux, networking, and penetration testing fundamentals.",
+            credentialUrl: "https://tryhackme.com/your-profile",
+            certificateImage: "assets/images/certificates/thm-fundamentals.jpg",
+            certificatePdf: "assets/certificates/thm-fundamentals.pdf",
+            skills: ["Linux", "Networking", "Penetration Testing"]
+        },
+        {
+            id: 6,
+            name: "HTML & CSS Fundamentals",
+            issuer: "Google Developers Launchpad",
+            year: "2021",
+            description: "Built responsive static web pages using HTML5 and CSS3, mastering modern web development techniques.",
+            credentialUrl: "https://developers.google.com/profile/your-profile",
+            certificateImage: "assets/images/certificates/google-html-css.jpg",
+            certificatePdf: "assets/certificates/google-html-css.pdf",
+            skills: ["HTML5", "CSS3", "Responsive Design"]
+        },
+        {
+            id: 7,
+            name: "Python Programming Course",
+            issuer: "Programming Hero",
+            year: "2020",
+            description: "Learned Python fundamentals, loops, data structures, and simple automation scripts.",
+            credentialUrl: "https://programming-hero.com/certificate/your-id",
+            certificateImage: "assets/images/certificates/python-hero.jpg",
+            certificatePdf: "assets/certificates/python-hero.pdf",
+            skills: ["Python", "Data Structures", "Automation"]
         }
     ],
 
