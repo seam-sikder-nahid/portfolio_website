@@ -356,7 +356,7 @@ const websiteData = {
         }
     ],
 
-    timeline: [
+   /* timeline: [
         {
             year: "2024",
             title: "Founded SecureShield",
@@ -382,8 +382,29 @@ const websiteData = {
             title: "Started University",
             description: "Began Computer Science degree with focus on Cybersecurity."
         }
-    ],
-
+    ], */
+timeline: [
+    {
+        year: "2025",
+        title: "CTF Night 0x1 Champion",
+        description: "Won CTF Night 0x1 (Intra-University CTF) on August 10, 2025, showcasing practical cybersecurity and problem-solving skills."
+    },
+    {
+        year: "2025",
+        title: "Certified Cybersecurity Educator Professional (CCEP)",
+        description: "Successfully achieved the CCEP certification in November 2025, strengthening expertise in cybersecurity education and training."
+    },
+    {
+        year: "2024",
+        title: "Cybersecurity Learning & Practice Phase",
+        description: "Actively focused on learning cybersecurity fundamentals, hands-on labs, CTF practice, and security research."
+    },
+    {
+        year: "2023",
+        title: "Started University",
+        description: "Enrolled in university in July 2023, beginning formal academic journey in Computer Science with interest in Cybersecurity."
+    }
+],
     businessPlans: [
         {
             id: 1,
