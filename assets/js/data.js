@@ -264,7 +264,7 @@ const websiteData = {
             technologies: ["HTML", "CSS", "JS"],
             link: "https://defensepro.netlify.app/",
             github: "#",
-            image: "project2.jpg"
+            image: "assets/Images/projects/defensepro.png"
         },
         {
             id: 3,
