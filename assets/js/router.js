@@ -183,7 +183,7 @@ class Router {
                             ).join(' ')}
                         </div>
                         <div style="margin-top: 20px; display: flex; gap: 10px;">
-                            <a href="${project.link}" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">View</a>
+                            <a href="${project.link}" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">View</a>
                             <a href="${project.github}" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">GitHub</a>
                         </div>
                     </div>
