@@ -168,7 +168,7 @@ class Router {
         });
     }
 
-    initProjectsPage() {
+   /* initProjectsPage() {
         const container = document.getElementById('projects-grid');
         if (container && websiteData.projects) {
             container.innerHTML = websiteData.projects.map(project => `
@@ -191,7 +191,36 @@ class Router {
             `).join('');
         }
     }
+*/
+    initProjectsPage() {
+    const container = document.getElementById('projects-grid');
+    if (container && websiteData.projects) {
+        container.innerHTML = websiteData.projects.map(project => `
+            <div class="card">
+                
+                <div class="project-image" style="width: 100%; height: 200px; overflow: hidden; border-radius: 8px 8px 0 0;">
+                    <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
 
+                <div class="card-content" style="padding: 15px;">
+                    <h3 class="card-title">${project.title}</h3>
+                    <p class="card-description">${project.description}</p>
+                    
+                    <div style="margin-top: 15px;">
+                        ${project.technologies.map(tech => 
+                            `<span class="skill-tag" style="font-size: 0.85rem; padding: 5px 12px;">${tech}</span>`
+                        ).join(' ')}
+                    </div>
+                    
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <a href="${project.link}" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">View</a>
+                        <a href="${project.github}" target="_blank" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+}
     initBlogPage() {
         // Render featured posts
         const featuredContainer = document.getElementById('featured-posts');
