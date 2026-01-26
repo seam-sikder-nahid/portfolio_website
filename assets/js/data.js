@@ -258,11 +258,11 @@ const websiteData = {
         },
         {
             id: 2,
-            title: "Secure Chat Application",
+            title: "DefensePro",
             category: "Development",
-            description: "End-to-end encrypted messaging platform with advanced security features.",
-            technologies: ["React", "Node.js", "Socket.io", "Cryptography"],
-            link: "#",
+            description: "A comprehensive preparation platform for aspirants joining Bangladesh Defense forces (Army, Navy, Air Force, Ansar). Features include training courses, study books, and mock exams.",
+            technologies: ["HTML", "CSS", "JS"],
+            link: "https://defensepro.netlify.app/",
             github: "#",
             image: "project2.jpg"
         },
